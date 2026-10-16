@@ -35,7 +35,44 @@ body.light .bubble-panel{background:#fff}body.light .bubble-item.active{backgrou
 
 /* VitaPath 4 interface */
 :root{--radius:18px}body{font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif}main{max-width:1050px}.card{border-radius:18px;box-shadow:none}.metric{letter-spacing:-.035em}.v4-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:4px 0 18px}.v4-head h2{margin:0}.v4-stack{display:grid;gap:12px}.v4-hero{padding:20px}.v4-hero .metric{font-size:clamp(28px,5vw,40px)}.v4-quiet{font-size:12px;color:var(--muted);line-height:1.6}.v4-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.v4-stats .card{min-width:0}.v4-primary{margin:8px 0 14px}.v4-entries{display:grid;gap:8px}.v4-entry{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}.v4-entry:last-child{border:0}.v4-entry strong{font-size:14px}.v4-entry .small{font-size:12px}.v4-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 15px}.v4-tabs button{border:1px solid var(--border);border-radius:30px;background:var(--panel2);color:var(--fg);padding:9px 13px;cursor:pointer}.v4-tabs button.active{background:var(--accent,#21b8a6);color:#051e1c}.v4-disclose{border:1px solid var(--border);border-radius:16px;background:var(--panel);margin:12px 0;overflow:hidden}.v4-disclose summary{padding:15px 17px;cursor:pointer;font-weight:650}.v4-disclose>div{padding:0 17px 17px}.v4-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.v4-form-grid label{font-size:13px}.v4-form-grid input,.v4-form-grid select{width:100%}.v4-check{display:flex;align-items:center;gap:8px}.v4-check input{width:auto}.v4-status{font-size:12px;color:var(--muted)}.v4-report{background:#fff;color:#17212a}.v4-report *{color:inherit}.v4-progress{display:flex;gap:6px;flex-wrap:wrap}.v4-progress span{border-radius:20px;padding:6px 9px;background:var(--panel2);font-size:12px}.v4-inline-actions{display:flex;gap:8px;flex-wrap:wrap}@media(max-width:550px){.v4-form-grid{grid-template-columns:1fr}.v4-hero{padding:16px}.v4-stats{gap:9px}.v4-stats .card{padding:13px}.v4-head{align-items:flex-start}.v4-head .btn{font-size:12px}}
-</style></head><body><header><div class="top"><div><div class="brand">✳ Vita<b>Path</b></div><div class="small">Your personal health tracker</div></div></div></header><main><nav class="tabs" id="tabs"></nav><div id="view"></div></main><nav class="bottom" id="bottom"></nav><div id="bubbleShade" class="bubble-shade" onclick="closeBubble()" aria-hidden="true"></div><nav class="bubble-nav" id="bubbleNav" aria-label="VitaPath sections"><div class="bubble-panel" id="bubblePanel" aria-label="Navigate to section"></div><button type="button" id="bubbleToggle" class="bubble-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="bubblePanel" onclick="toggleBubble()"><span class="cross" aria-hidden="true">+</span></button></nav><div id="modal"></div><script>
+
+/* Premium Dark visual system */
+:root{color-scheme:dark;--bg:#061017;--panel:#0d202a;--panel2:#112a34;--border:#1d3943;--fg:#e9f7f5;--muted:#91a9b4;--mint:#31dbad;--blue:#43b6ff;--amber:#ffbf58;--red:#ff7f89;--radius:20px}
+body{background:radial-gradient(ellipse 90% 38% at 50% -10%,#12323a 0%,transparent 80%),var(--bg);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:#06141beF;border-bottom:1px solid #18313a;padding:17px 18px;backdrop-filter:blur(18px)}
+.brand{font-size:24px;font-weight:800;letter-spacing:-1.1px}.brand b{color:var(--mint)}
+main{max-width:1040px;padding:20px 17px 116px}.card{background:linear-gradient(145deg,#102630,#0b1d26);border:1px solid #1a3540;border-radius:20px;padding:19px;box-shadow:0 10px 30px #0000001a}
+.card h3{font-weight:750;letter-spacing:-.025em}.metric{font-size:clamp(26px,4vw,34px);letter-spacing:-.045em;font-weight:800}
+.small,.v4-quiet{color:#9ab1bb}.v4-head h2,h2{font-size:25px;font-weight:800;letter-spacing:-.04em}
+.v4-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#0d3031,#0c222d 55%,#0a1c27);border-color:#24564f;padding:23px}
+.v4-hero:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#2be0aa,#35a7df,transparent)}
+.v4-hero .metric{font-size:clamp(34px,6vw,46px);color:#f0fffa}
+.v4-stats{gap:12px}.v4-stats .card{min-height:105px}
+.btn{background:linear-gradient(110deg,#25d4a2,#45dfb5);color:#05251f;border-radius:12px;min-height:43px;font-weight:750;box-shadow:0 5px 18px #0adba91a}
+.btn.secondary{background:#142d37;color:#d5ecea;border:1px solid #2b4852;box-shadow:none}
+.btn:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #47e6bf;outline-offset:2px}
+input,select,textarea{background:#0a1a23;border:1px solid #31505b;border-radius:12px;min-height:44px;color:#f2faf8}
+input:focus,select:focus,textarea:focus{border-color:#31dbad;outline:2px solid #31dbad35}
+.modal{background:#0d222c;border:1px solid #31505b;border-radius:23px;box-shadow:0 22px 70px #000a}
+.v4-entry{border-bottom-color:#27404a}.bar{background:#263e47}.bar>div{background:linear-gradient(90deg,#24b78e,#42e4b5)}
+.v4-progress span,.chip{background:#18323b;border:1px solid #29444e}
+.premium-bottom{display:none}
+@media(max-width:780px){
+ .tabs,.bottom,.bubble-nav,.bubble-shade{display:none!important}
+ .premium-bottom{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:25;padding:9px 8px calc(8px + env(safe-area-inset-bottom));background:#07161ef7;border-top:1px solid #23404a;backdrop-filter:blur(18px)}
+ .premium-bottom button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:54px;background:none;border:0;color:#819ba6;font-size:11px;font-weight:650}
+ .premium-bottom button.active{color:#30e0af}
+ .premium-bottom .nav-icon{font-size:22px;line-height:1.2}
+ .premium-bottom button.active .nav-icon{filter:drop-shadow(0 0 9px #20dca766)}
+ main{padding-bottom:110px}.v4-hero{padding:20px}
+ .v4-stats .card{padding:15px}
+}
+body.light .premium-bottom{background:#f8fcfbf7;border-color:#cbdede}
+body.light .premium-bottom button{color:#506873}body.light .premium-bottom button.active{color:#008b6b}
+body.light .card{background:#fff;border-color:#d7e5e5;box-shadow:0 4px 18px #123d4210}
+body.light .v4-hero{background:linear-gradient(135deg,#e2faf2,#eef9fc);border-color:#a2d9c9}
+body.light .v4-hero .metric{color:#123b38}
+</style></head><body><header><div class="top"><div><div class="brand">✳ Vita<b>Path</b></div><div class="small">Your personal health tracker</div></div></div></header><main><nav class="tabs" id="tabs"></nav><div id="view"></div></main><nav class="bottom" id="bottom"></nav><nav class="premium-bottom" id="premiumBottom" aria-label="Main navigation"></nav><div id="bubbleShade" class="bubble-shade" onclick="closeBubble()" aria-hidden="true"></div><nav class="bubble-nav" id="bubbleNav" aria-label="VitaPath sections"><div class="bubble-panel" id="bubblePanel" aria-label="Navigate to section"></div><button type="button" id="bubbleToggle" class="bubble-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="bubblePanel" onclick="toggleBubble()"><span class="cross" aria-hidden="true">+</span></button></nav><div id="modal"></div><script>
 'use strict';
 const KEY='vitapath_complete_v1';const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};const addDays=(s,n)=>{const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};const dayDiff=(a,b)=>Math.round((new Date(b+'T12:00:00')-new Date(a+'T12:00:00'))/86400000);const uid=()=>globalThis.crypto?.randomUUID?.()||String(Date.now())+Math.random();const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const fmt=n=>Number.isFinite(Number(n))?Number(n).toLocaleString('en-MY',{maximumFractionDigits:2}):'—';const num=n=>Number(n)||0;
 const defaults=()=>({version:1,settings:{target:75,calories:1700,protein:100,steps:10000,water:2000,height:0,theme:'dark',baselineDate:'',startDate:'',interval:7},injections:[],weights:[],meals:[],steps:[],water:[],symptoms:[],waist:[],labs:[]});let data=defaults(),tab='dashboard',range='90',labMetric='hba1c',storageBroken=false;
@@ -360,6 +397,33 @@ dashboard=v4Dashboard;injections=v4Injections;weight=v4Weight;food=v4Food;activi
 if(!data.settings.v4EnergyMode)data.settings.v4EnergyMode='off';
 if(data.settings.v4StepBaseline===undefined)data.settings.v4StepBaseline=2000;
 if(data.settings.v4KcalPerStep===undefined)data.settings.v4KcalPerStep=.04;
+
+
+/* Premium navigation and mobile form usability */
+let premiumMoreOpen=false;
+function premiumNavigate(target){premiumMoreOpen=false;document.activeElement?.blur?.();go(target)}
+function premiumMore(){premiumMoreOpen=!premiumMoreOpen;premiumRenderNav();if(premiumMoreOpen)document.getElementById('premiumMorePanel')?.focus()}
+function premiumRenderNav(){
+ const el=document.getElementById('premiumBottom');if(!el)return;
+ const active=tab;
+ const opts=[['dashboard','⌂','Home'],['food','▤','Log'],['insights','▥','Progress'],['more','•••','More']];
+ el.innerHTML=opts.map(([id,icon,label])=>'<button type="button" class="'+((id===active||(id==='more'&&['injections','weight','activity','labs','settings'].includes(active)))?'active':'')+'" onclick="'+(id==='more'?'premiumMore()':"premiumNavigate('"+id+"')")+'"><span class="nav-icon">'+icon+'</span><span>'+label+'</span></button>').join('');
+ let panel=document.getElementById('premiumMorePanel');
+ if(!panel){panel=document.createElement('div');panel.id='premiumMorePanel';panel.className='premium-more-panel';document.body.append(panel)}
+ panel.hidden=!premiumMoreOpen;
+ panel.innerHTML=[['weight','⚖ Weight'],['injections','💉 Injections'],['activity','↗ Activity'],['labs','⚗ Blood results'],['settings','⚙ Settings']].map(([id,label])=>'<button type="button" onclick="premiumNavigate(\''+id+'\')">'+label+'</button>').join('');
+}
+const premiumStyle=document.createElement('style');premiumStyle.textContent='.premium-more-panel{position:fixed;z-index:26;right:12px;bottom:calc(82px + env(safe-area-inset-bottom));width:min(280px,calc(100vw - 24px));background:#102630;border:1px solid #34535b;border-radius:19px;padding:10px;box-shadow:0 14px 50px #000a}.premium-more-panel[hidden]{display:none}.premium-more-panel button{display:block;width:100%;text-align:left;border:0;border-radius:11px;background:none;color:#e5f7f3;padding:14px;font:inherit}.premium-more-panel button:active{background:#1b4146}body.light .premium-more-panel{background:white}body.light .premium-more-panel button{color:#17303b}';document.head.append(premiumStyle);
+const premiumOriginalRender=render;
+render=function(){premiumOriginalRender();premiumRenderNav()};
+function premiumDismissKeyboard(){const el=document.activeElement;if(el&&/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))el.blur()}
+document.addEventListener('submit',e=>{if(e.target.closest('#modal'))premiumDismissKeyboard()},true);
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('input:not([type="submit"]):not([type="button"]),select')&&e.target.closest('#modal')){if(e.target.type!=='date'&&e.target.type!=='checkbox'){e.preventDefault();premiumDismissKeyboard()}}});
+let premiumDay=today();
+function premiumRefreshDay(){const now=today();if(now!==premiumDay){premiumDay=now;premiumMoreOpen=false;closeModal();render()}}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)premiumRefreshDay()});
+window.addEventListener('focus',premiumRefreshDay);
+setInterval(()=>{if(!document.hidden)premiumRefreshDay()},60000);
 
 render();
 </script></body></html>
